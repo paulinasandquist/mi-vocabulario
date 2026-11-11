@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samla och organisera dina spanska glosor.">
+  <title>Mi Vocabulario – Mina spanska glosor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- Sidhuvud med logotyp och introduktion -->
+    <header class="sidhuvud">
+      <div class="toppmeny">
+        <span class="logotyp">MiVo<span aria-hidden="true">✳</span></span>
+        <span class="toppetikett">DIN SPANSKA STUDIO</span>
+        <span class="utgava">01 / 01</span>
+      </div>
+
+      <div class="hero">
+        <div class="herotext">
+          <p class="overrubrik">LÄR DIG SPANSKA, ETT ORD I TAGET</p>
+          <h1>Mi<br><em>Vocabulario</em></h1>
+          <p class="introduktion">Lär dig spanska på ett enkelt sätt.</p>
+          <a class="hopplank" href="#formular-rubrik">
+            Börja samla ord!
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="heroillustration" aria-hidden="true">
+          <span class="illustrationstext">¡HOLA!</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="innehall">
+
+      <!-- Formulär för att lägga till och redigera glosor -->
+      <section class="panel formularkort" aria-labelledby="formular-rubrik">
+        <div class="sektionshuvud">
+          <span class="sektionsnummer">01 / SKAPA</span>
+          <span class="dekoration" aria-hidden="true">✳</span>
+        </div>
+
+        <h2 id="formular-rubrik">Ett nytt <em>ord?</em></h2>
+        <p class="sektionstext">Skriv in ett spanskt ord och vad det betyder på svenska.</p>
+
+        <form id="glosformular">
+          <div class="faltgrupp">
+            <div class="falt">
+              <label for="spanska">Spanska</label>
+              <input
+                id="spanska"
+                name="spanska"
+                type="text"
+                placeholder="t.ex. mariposa"
+                maxlength="80"
+                autocomplete="off"
+                required>
+            </div>
+
+            <div class="falt">
+              <label for="svenska">Svenska</label>
+              <input
+                id="svenska"
+                name="svenska"
+                type="text"
+                placeholder="t.ex. fjäril"
+                maxlength="80"
+                autocomplete="off"
+                required>
+            </div>
+          </div>
+
+          <div class="formularknappar">
+            <button class="knapp knapp-primar" id="spara-knapp" type="submit">
+              Lägg till glosa
+              <span aria-hidden="true">＋</span>
+            </button>
+
+            <button class="knapp knapp-sekundar dold" id="avbryt-knapp" type="button">
+              Avbryt redigering
+            </button>
+          </div>
+
+          <p id="meddelande" class="meddelande" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- Lista med sparade glosor och sökfunktion -->
+      <section class="panel glossektion" aria-labelledby="lista-rubrik">
+        <div class="sektionshuvud">
+          <span class="sektionsnummer">02 / DIN SAMLING</span>
+        </div>
+
+        <div class="listtitel">
+          <h2 id="lista-rubrik">Mina <em>glosor</em></h2>
+          <span id="antal" class="antal">0</span>
+        </div>
+
+        <div class="sokruta">
+          <label class="visuellt-dold" for="sok">Sök bland glosor</label>
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="sok"
+            type="search"
+            placeholder="Sök bland dina ord"
+            autocomplete="off">
+        </div>
+
+        <div class="tabellhuvud" aria-hidden="true">
+          <span>SPANSKA</span>
+          <span>SVENSKA</span>
+          <span>ÄNDRA</span>
+        </div>
+
+        <ul id="gloslista" class="gloslista" aria-live="polite"></ul>
+        <p id="tom-lista" class="tom-lista dold">Inga glosor att visa.</p>
+      </section>
+    </div>
+
+    <!-- Sidfot -->
+    <footer>
+      <span>MI VOCABULARIO © 2026</span>
+      <span>POCO A POCO</span>
+    </footer>
+
+  </main>
+</body>
+
+</html>
